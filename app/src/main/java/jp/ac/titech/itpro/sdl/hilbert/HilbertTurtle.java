@@ -6,7 +6,7 @@ public class HilbertTurtle extends Turtle {
         super(drawer);
     }
 
-    public void draw(int order, double step, double turn) {
+    public void draw(int order, double step, int turn) {
         if (order > 0) {
             rotate(-turn);
             draw(order - 1, step, -turn);
