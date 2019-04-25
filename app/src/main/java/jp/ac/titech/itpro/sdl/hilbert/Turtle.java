@@ -12,6 +12,7 @@ public class Turtle {
 
     private double x = 0.0, y = 0.0;
     private int dir = 0;
+    private int w = 0;
 
     private Drawer drawer;
 
@@ -28,10 +29,21 @@ public class Turtle {
         this.dir = dir;
     }
 
+    public void setWidth(int w) { this.w = w; }
+
     public void forward(double step) {
         double x1 = x + pseudoSin[dir] * step;
         double y1 = y - pseudoCos[dir] * step;
         drawer.drawLine(x, y, x1, y1);
+        x = x1;
+        y = y1;
+    }
+
+    public void forward2(double step) {
+        double x1 = x + pseudoSin[dir] * step;
+        double y1 = y - pseudoCos[dir] * step;
+        drawer.drawLine(x, y, x1, y1);
+        drawer.drawLine(w-x, y, w-x1, y1);
         x = x1;
         y = y1;
     }

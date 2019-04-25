@@ -50,7 +50,8 @@ public class HilbertView extends View {
         double step = (double) size / (1 << order);
         turtle.setPos((w - size + step) / 2, (h + size - step) / 2);
         turtle.setDir(HilbertTurtle.E);
-        turtle.draw(order, step, HilbertTurtle.R);
+        turtle.setWidth(w);
+        turtle.draw(order, order, step, HilbertTurtle.R);
     }
 
     public void setOrder(int n) {
